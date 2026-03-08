@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <time.h>
 
-// Github TEST
+// Github TEST2
 int main(void) {
 	int max = 0;
 	int arr[100] = { 0 };
