@@ -19,4 +19,7 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="입출력함수.md" />
+  </ItemGroup>
 </Project>

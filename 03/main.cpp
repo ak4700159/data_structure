@@ -1,4 +1,4 @@
-// 보안 무시, {}_s 함수 사용을 강요하지 않음
+// 보안 무시, {}_s 함수 사용을 강제하지 않음
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <stdio.h>
