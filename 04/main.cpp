@@ -24,6 +24,7 @@ void insert_student(Students*, char*, int, double);
 int print_student(Students*, char*);// 학생 출력 함수
 double avg_total(Students*);		// 점수 평균 계산 함수
 int save(Students*);				// 학생 배열 저장 함수
+void deallocation(Students*);		// 동적 배열 할당 해제 함수
 void clean_input_buffer();			// 입력 버퍼 비우는 함수
 
 int main(void) {
@@ -46,14 +47,14 @@ int main(void) {
 			}
 			case '3': {
 				double avg = avg_total(&students);
-				printf("Average score: %f\n\n", avg);
+				printf("Average score: %.3f\n\n", avg);
 				break;
 			}
 			case '4': {
 				save(&students);
 				break;
 			}
-			case '5': return 0;
+			case '5': deallocation(&students); return 0;
 			default: printf("Wrong input number: -%c-\n\n", input);
 		}
 	}
@@ -162,6 +163,14 @@ int save(Students* students) {
 	}
 	fclose(fp);
 	return 0;
+}
+
+void deallocation(Students* students) {
+	// 메모리 누수를 방지하기 위해 name부터 할당 해제
+	for (int i = 0; i < students->len; i++) {
+		free(students->arr[i].name);
+	}
+	free(students->arr);
 }
 
 void clean_input_buffer() {
