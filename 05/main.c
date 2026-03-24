@@ -88,7 +88,7 @@ void print_average(int* arr, int size) {
 		return;
 	}
 
-	double avr = 0.;
+	double avr = arr[0];
 	for (int i = 1; i < size; i++) {
 		avr += arr[i];
 	}
