@@ -13,20 +13,20 @@ void print_array(int*, int);
 
 int main(void) {
 	srand((unsigned int)time(NULL));
-	int* arr = NULL; int n = 0; 
-	char input; 
+	int* arr = NULL; int n = 0;
+	char input;
 	while (1) {
 		menu();
 		// 문자열을 입력한 경우 버퍼속 문자를 전부 비워야됨
 		scanf(" %c", &input);
 		switch (input) {
-			case '1': init(&arr, &n);			break;
-			case '2': print_average(arr, n);	break;
-			case '3': print_max_min(arr, n);	break;
-			case '4': delete_element(&arr, &n);	break;
-			case '5': print_array(arr, n);		break;
-			case '6': free(arr);				return 0;
-			default: printf("Wrong input number: -%c-\n\n", input);
+		case '1': init(&arr, &n);			break;
+		case '2': print_average(arr, n);	break;
+		case '3': print_max_min(arr, n);	break;
+		case '4': delete_element(&arr, &n);	break;
+		case '5': print_array(arr, n);		break;
+		case '6': free(arr);				return 0;
+		default: printf("Wrong input number: -%c-\n\n", input);
 		}
 	}
 	return 0;
@@ -43,7 +43,7 @@ void menu() {
 	printf("(Input) ");
 }
 
-void init(int** arr, int *size) {
+void init(int** arr, int* size) {
 	while (1) {
 		printf("Input Array size: ");
 		int reuslt = scanf(" %d", size);
