@@ -5,6 +5,7 @@
 // Github TEST3
 int main(void) {
 	int max = 0;
+	// 
 	int arr[100] = { 0 };
 
 	printf("arr memory address = %p\n", (void*)arr);
@@ -13,8 +14,16 @@ int main(void) {
 	printf("Seconds : %d\n", sec);
 	srand(sec);
 
+	//(초기화식; 조건식; 증감식)
+	// 1. 초기화식 실행
+	// 2. 조건식 실행
+	// 3. for문 내용 실행
+	// 4. 증감식 실행
+	// 5. 조건식 실행
+	// 6. for문 내용 실행
+	// ...
 	for (int i = 0; i < 100; i++) {
-		arr[i] = rand() % 101;
+		arr[i] = rand() % 101; // 0 ~ 100
 	}
 
 	for (int i = 0; i < 10; i++) {
