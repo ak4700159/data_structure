@@ -23,7 +23,7 @@ typedef struct ArrayList {
 void run_simulation(METHOD);
 
 void init_arr(ArrayList**, int, METHOD);
-int is_empty(ArrayList*);
+int is_full(ArrayList*);
 
 void deep_copy(ArrayList*);
 

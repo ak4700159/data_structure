@@ -70,7 +70,7 @@ void deep_copy(ArrayList* arr) {
 }
 
 void insert_last(ArrayList* arr, int element) {
-	if (is_empty(arr)) {
+	if (is_full(arr)) {
 		deep_copy(arr);
 	}
 	arr->data[arr->size++] = element;
