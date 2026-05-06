@@ -81,7 +81,8 @@ void push(ArrayStack* stack, int element) {
 	if (stack == NULL) return;
 	if (isFull(stack)) {
 		printf("Stack is Full\n");
-		return;
+		realloc_user(stack);
+		printf("Realloc Stack data\n");
 	}
 	stack->array[++stack->top] = element;
 }
@@ -100,5 +101,20 @@ void print(ArrayStack* stack) {
 	for (int i = stack->top; i >= 0; i--) {
 		printf("[%d]%d\n", i, stack->array[i]);
 	}
+	printf("Capacity=%d/Top=%d\n", stack->capacity, stack->top);
 	printf("------------\n");
+}
+
+// 14 과제
+int* deep_copy(int* old_data, int capacity) {
+	int* new_data = (int*)malloc(sizeof(int) * capacity);
+	for (int i = 0; i < (int)(capacity / 2); i++) {
+		new_data[i] = old_data[i];
+	}
+	free(old_data);
+	return new_data;
+}
+void realloc_user(ArrayStack* stack) {
+	stack->capacity *= 2;
+	stack->array = deep_copy(stack->array, stack->capacity);
 }

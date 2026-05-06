@@ -23,5 +23,8 @@ int isEmpty(ArrayStack*);
 int isFull(ArrayStack*);
 void push(ArrayStack*, int);
 int pop(ArrayStack*);
+// 과제 14
+int* deep_copy(int*, int);
+void realloc_user(ArrayStack*);
 
 #endif
